@@ -23,21 +23,35 @@ def inserirElemento():
     lista_vazia.insert(posicao, elemento)
     print(lista_vazia)
 
-
+def removerElemento():
+    print(lista_vazia)
+    tamanho = lista_vazia.__len__()
+    elemento = int(input('Digite qual valor deseja deletar da lista: '))
+    acaoRemover = True
+    i = 0
+    while i > tamanho or acaoRemover:
+        if elemento == lista_vazia[i] :
+            del lista_vazia[i]
+            print(lista_vazia)
+            acaoRemover = False
+        else :
+            i + 1
 
 tamMax =int(input('Defina o tamanho da lista: '))
 verificarlista()
-adcionando()
-print('Tamanho da lista agora é',lista_vazia.__len__())
-
-execucao = True
-while execucao :
-    resposta = input('Deseja Adcionar um elemento? s/n ')
-    if resposta == 's' : 
-        adcionando()
+acaoMenu = True
+while acaoMenu:
+    menu = int(input('Digite o numero da opção que deseja. [1] Adicionar elemento, [2] Modificar elemento da lista, [3] Inserir elemento na lista, [4] Deletar elemento da lista, [5] Sair: '))
+    if menu == 1:
+         adcionando()
+         verificarlista()
+         print('Tamanho da lista agora é',lista_vazia.__len__())
+    if menu == 2:
+        obterEModificar()
+    if menu == 3:
+        inserirElemento()
         verificarlista()
-        print('Tamanho da lista agora é',lista_vazia.__len__())
-    if resposta == 'n' : execucao = False
-
-obterEModificar()
-inserirElemento()
+    if menu == 4:
+        removerElemento()
+    if menu == 5:
+        acaoMenu = False
