@@ -46,3 +46,5 @@ while acaoMenu:
         print(pilha.size())
     if menu == 6:
         acaoMenu = False
+
+
